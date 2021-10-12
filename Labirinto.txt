@@ -1,0 +1,125 @@
+//package it.uniroma3.diadia.ambienti;
+//
+//import java.util.HashMap;
+//import java.util.Map;
+//
+//import it.uniroma3.diadia.attrezzi.Attrezzo;
+//import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
+//import it.uniroma3.diadia.personaggi.Cane;
+//import it.uniroma3.diadia.personaggi.Mago;
+//import it.uniroma3.diadia.personaggi.Strega;
+//
+//public class LabirintoBuilder {
+//
+//	private Labirinto labirinto;
+//	private Map<String, Stanza> nome2stanza;
+//	private Stanza ultimaStanzaAggiunta;
+//
+//	public LabirintoBuilder() {
+//		labirinto = new Labirinto() ;
+//		nome2stanza =  new HashMap<>();
+//	}
+//	
+//	public  Map<String, Stanza> getNome2Stanza(){
+//		return this.nome2stanza;
+//	}
+//	
+//	public void setLabirinto(Labirinto labirinto) {
+//		this.labirinto = labirinto;
+//	}
+//
+//	public Labirinto getLabirinto ( ) {
+//		return labirinto;
+//	}
+//	
+//	public LabirintoBuilder addStanzaIniziale(String nome) {
+//		Stanza stanzaIniziale = new Stanza(nome);
+//		labirinto.setStanzaIniziale(stanzaIniziale);
+//		saveConfigRoom(stanzaIniziale);
+//		return this;
+//	}
+//
+//	public LabirintoBuilder addStanzaVincente(String nome) {
+//		Stanza stanzaVincente = new Stanza(nome);
+//		this.labirinto.setStanzaVincente(stanzaVincente);
+//		saveConfigRoom(stanzaVincente);
+//		return this;
+//	}
+//
+//	public LabirintoBuilder addStanza(String nome) {
+//		Stanza stanza = new Stanza(nome);
+//		saveConfigRoom(stanza);
+//		return this;
+//	}
+//
+//	public LabirintoBuilder addStanzaBloccata(String nome, String chiave, String direzione) {
+//		Stanza stanza = new StanzaBloccata(nome, chiave,Direzione.valueOf(direzione.toUpperCase()));
+//		saveConfigRoom(stanza);
+//		return this;
+//
+//	}
+//
+//	public LabirintoBuilder addStanzaBuia(String nome) {
+//		Stanza stanza = new StanzaBuia(nome);
+//		saveConfigRoom(stanza);
+//		return this;
+//
+//	}
+//
+//	public LabirintoBuilder addStanzaMagica(String nome) {
+//		Stanza stanza = new StanzaMagica(nome);
+//		saveConfigRoom(stanza);
+//		return this;
+//
+//	}
+//
+//	public LabirintoBuilder addAdiacenza(String stanza2, String stanza1, String direzione) {
+//
+//		this.nome2stanza.get(stanza2).impostaStanzaAdiacente(direzione, this.nome2stanza.get(stanza1));
+//
+//		return this;
+//	}
+//
+//	public LabirintoBuilder addAttrezzo(String nomeStanza, String nome, int peso) {
+//		Attrezzo attrezzo = new Attrezzo(nome, peso);
+//		this.nome2stanza.get(nomeStanza).addAttrezzo(attrezzo);
+//		return this;
+//	}
+//	
+//	public LabirintoBuilder addStrega(String nome, String presentaz, String nomeStanza) {
+//		AbstractPersonaggio strega = new Strega(nome, presentaz);
+//		this.ultimaStanzaAggiunta = this.nome2stanza.get(nomeStanza);
+//		saveConfigPers(strega);
+//		return this;
+//	}
+//	
+//	public LabirintoBuilder addCane(String nome, String presentaz, String attrezzo, int peso, String ciboPrefe, String nomeStanza) {
+//		AbstractPersonaggio cane = new Cane(nome, presentaz, attrezzo, peso, ciboPrefe);
+//		this.ultimaStanzaAggiunta = this.nome2stanza.get(nomeStanza);
+//		saveConfigPers(cane);
+//		return this;
+//	}
+//	
+//	public LabirintoBuilder addMago(String nome, String presentaz, String attrezzo, int peso ,String nomeStanza) {
+//		
+//		Attrezzo attrezzoCreato = new Attrezzo(attrezzo, peso);
+//		AbstractPersonaggio mago = new Mago(nome, presentaz, attrezzoCreato);
+//		this.ultimaStanzaAggiunta = this.nome2stanza.get(nomeStanza);
+//		saveConfigPers(mago);
+//		return this;
+//	}
+//
+//
+//	private void saveConfigPers(AbstractPersonaggio personaggio) {
+//		this.ultimaStanzaAggiunta.setPersonaggio(personaggio);
+//	}
+//
+//	public void saveConfigRoom (Stanza stanzaUltima) {
+//		this.ultimaStanzaAggiunta = stanzaUltima;
+//		this.nome2stanza.put(stanzaUltima.getNome(), stanzaUltima);
+//	}
+//
+//	public void saveConfigTool (Attrezzo attrezzoUltimo){
+//		this.ultimaStanzaAggiunta.addAttrezzo(attrezzoUltimo);
+//	}
+//}

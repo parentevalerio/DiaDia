@@ -1,0 +1,53 @@
+Stanze:
+N10
+Biblioteca
+Atrio
+N11
+LaboratorioCampus
+StanzaLocked
+Magiche:
+StanzaMagica
+Bloccate:
+StanzaBloccata chiave nord
+Buie:
+StanzaBuia
+Iniziale:
+Atrio
+Vincente:
+Biblioteca
+Attrezzi:
+osso 2 Atrio
+lanterna 3 N11
+kiwi 1 N10
+piuma 0 N10
+piombo 10 N10
+avocado 1 LaboratorioCampus
+ps 5 LaboratorioCampus
+Maghi:
+MagoTorta Cakez torta 3 StanzaLocked
+Streghe:
+Strega BAKA! N11
+Cani:
+Doggo GRR chiave 0 osso StanzaBuia
+Uscite:
+Atrio nord Biblioteca
+Biblioteca sud Atrio
+Atrio est N11
+N11 ovest Atrio
+Atrio sud N10
+N10 nord Atrio
+Atrio ovest LaboratorioCampus
+LaboratorioCampus est Atrio
+N11 est LaboratorioCampus
+LaboratorioCampus ovest N11
+N10 est N11
+N11 ovest N10
+N10 ovest LaboratorioCampus
+StanzaMagica sud LaboratorioCampus
+LaboratorioCampus nord StanzaMagica
+StanzaMagica ovest StanzaBuia
+StanzaMagica est StanzaBloccata
+StanzaBuia est StanzaMagica
+StanzaBloccata ovest StanzaMagica
+StanzaBloccata nord StanzaLocked
+StanzaLocked sud StanzaBloccata
